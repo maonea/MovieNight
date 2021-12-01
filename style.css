@@ -15,10 +15,39 @@ body {
   margin: 0;
 }
 
+.left-container {
+  display: flex;
+}
+
+.menu-container {
+  margin: 1rem;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+li {
+  padding-left: 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#logo {
+  width: 5rem;
+}
+
 header {
   padding: 1rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: var(--secondary-color);
 }
 
@@ -50,7 +79,8 @@ header {
   border-radius: 50px;
   font-family: inherit;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 3rem;
+  margin: 1rem;
   color: #fff;
 }
 
@@ -127,4 +157,43 @@ main {
 
 .movie:hover .overview {
   transform: translateY(0);
+}
+
+@media (max-width: 775px) {
+  .btn {
+    display: none;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .search {
+    background-color: transparent;
+    border: 3px solid var(--primary-color);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.7rem;
+    padding: 1rem;
+    margin: 5px;
+    color: #fff;
+  }
+}
+
+@media(max-width: 920px) {
+  .search {
+    background-color: transparent;
+    border: 3px solid var(--primary-color);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.7rem;
+    padding: 1rem;
+    margin: 1rem;
+    color: #fff;
+  }
+
+  li {
+    font-size: 1rem;
+  }
+  
 }
