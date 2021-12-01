@@ -7,10 +7,9 @@ const invalidImage =
 
 const main = document.getElementById('main')
 const form = document.getElementById('form')
+const logo = document.getElementById('logo')
 const searchButton = document.querySelector('.btn')
 const search = document.getElementById('search')
-
-
 
 getMovies(API_URL)
 
@@ -34,7 +33,7 @@ function showMovies(movies) {
   main.innerHTML = ''
 
   movies.forEach((movie) => {
-    const { title, poster_path, vote_average, overview, backdrop_path } = movie
+    const { title, poster_path, vote_average, overview } = movie
 
     const movieElement = document.createElement('div')
     movieElement.classList.add('movie')
@@ -79,6 +78,10 @@ function getClassByRate(vote) {
 
 searchButton.setAttribute('onclick', 'this.blur();')
 
+logo.addEventListener('click', () => {
+  window.location.reload()
+})
+
 form.addEventListener('submit', (e, b) => {
   e.preventDefault()
 
@@ -88,7 +91,6 @@ form.addEventListener('submit', (e, b) => {
     getMovies(SEARCH_API + searchTerm)
 
     search.value = ''
-    
   } else {
     window.location.reload()
   }
